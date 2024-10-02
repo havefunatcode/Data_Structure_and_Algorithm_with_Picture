@@ -1,0 +1,31 @@
+from Stack import Stack
+
+stack = Stack()
+
+print("------------- push -------------")
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+stack.list.print_all()
+
+print("------------- pop -------------")
+print(stack.pop().data)
+print(stack.pop().data)
+print(stack.pop().data)
+print(stack.pop().data)
+stack.list.print_all()
+
+print("------------- 2번째 출력 -------------")
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.push(4)
+print(stack.peek())
+stack.pop()
+print(stack.peek())
+print(f"isEmpty: {stack.is_empty()}")
+stack.pop()
+stack.pop()
+stack.pop()
+print(f"isEmpty: {stack.is_empty()}")
