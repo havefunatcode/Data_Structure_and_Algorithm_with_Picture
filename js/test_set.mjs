@@ -25,4 +25,4 @@ console.log(`isContain: ${hashSet.isContain(1)}`);
 console.log('--------------clear---------------');
 hashSet.clear();
 hashSet.printAll();
-console.log(`isEmpty: ${hashSet.isEmpty()}`);
+console.log(`isEmpty: ${hashSet.isEmpty()}`);Burt
