@@ -1,6 +1,5 @@
 def insertion_sort(arr: list) -> list:
-    arr_len = len(arr)
-    for i in range(1, arr_len):
+    for i in range(1, len(arr)):
         key = arr[i]
         j = i - 1
         while j >= 0 and key < arr[j]:
