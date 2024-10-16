@@ -2,23 +2,23 @@ def merge_sort(arr):
     if len(arr) <= 1:
         return arr
     
-    mid = len(arr) / 2
-    left_arr = merge_sort(arr[:mid])
-    right_arr = merge_sort(arr[mid:])
-    
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+
     result = []
     left_idx = right_idx = 0
     
-    while left_arr < len(left_arr) and right_arr < len(right_arr):
-        if arr[left_arr] < arr[right_arr]:
-            result.append(arr[left_arr])
-            left_arr += 1
+    while left_idx < len(left) and right_idx < len(right):
+        if left[left_idx] < right[right_idx]:
+            result.append(left[left_idx])
+            left_idx += 1
         else:
-            result.append(arr[right_arr])
-            right_arr += 1
+            result.append(right[right_idx])
+            right_idx += 1
     
-    result += left_arr[left_idx:]
-    result += right_arr[right_idx:]
+    result += left[left_idx:]
+    result += right[right_idx:]
     return result
 
 def merge_sort_in_place(arr):
@@ -30,7 +30,7 @@ def merge_sort_in_place(arr):
         sort(left, mid)
         sort(mid, right)
         merge(left, mid, right)
-    
+        
     def merge(left, mid, right):
         temp = []
         left_idx, right_idx = left, mid
@@ -52,5 +52,10 @@ def merge_sort_in_place(arr):
         
         for i in range(left, right):
             arr[i] = temp[i - left]
-    
     return sort(0, len(arr))
+
+sample_data = [38, 27, 43, 3, 9, 82, 10]
+sorted_data1 = merge_sort(sample_data)
+merge_sort_in_place(sample_data)
+print(sorted_data1)
+print(sample_data)
